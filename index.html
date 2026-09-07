@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reading List</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">Reading List</h1>
+      <p class="lede">気になった技術記事の置き場。★ は特に残したいもの。</p>
+      <input
+        id="query"
+        class="query"
+        type="search"
+        placeholder="タイトル・URL・タグで絞り込む"
+        autocomplete="off"
+      />
+      <div id="sites" class="chips"></div>
+    </header>
+
+    <main>
+      <p id="count" class="count"></p>
+      <ul id="list" class="list"></ul>
+      <p id="empty" class="empty" hidden>該当する記事がありません。</p>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
