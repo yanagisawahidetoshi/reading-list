@@ -1,0 +1,46 @@
+name: Deploy to GitHub Pages
+
+# GitHub 標準の dynamic ビルド（pages-build-deployment）を自前のワークフローで置き換える。
+# 標準ビルドは同一ラン内で github-pages アーティファクトを 3 つ作って deploy を落としたことがある
+# （2026-09-07 / run 34094720057）。ここでは upload を 1 回だけ実行し、公開前にテストを通す。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# デプロイ同士が重なると deploy-pages が競合するため直列化する。
+# 進行中のデプロイは途中で止めない。
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: node --test
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v5
