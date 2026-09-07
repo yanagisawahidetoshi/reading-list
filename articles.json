@@ -1,5 +1,19 @@
 [
   {
+    "url": "https://tech-blog.rakus.co.jp/entry/20260903/sdd",
+    "title": "スキルを43個作っても越えられない、仕様駆動開発の4つの壁",
+    "site": "tech-blog.rakus.co.jp",
+    "date": "2026-09-07",
+    "tags": [
+      "ai",
+      "loop-engineering",
+      "spec-driven-development",
+      "claude-code"
+    ],
+    "saved": true,
+    "note": "cc-sdd で SDD を半年回した、失敗込みの現在進行形レポート。速くなったのは個人の作業だけでチームの資産は積み上がらなかった。残った壁は品質の再現性・レビューの肥大化・完了基準の不在・プロセスの重厚さ。打ち手を「SDDの改善」から「SDDが回る環境の整備」へ切り替えた。"
+  },
+  {
     "url": "https://zenn.dev/pepabo/articles/ai-pr-review-bottleneck",
     "title": "PRのレビューが追いつかない！もう人間がボトルネックなので、気合いではなく仕組みで少しずつなんとかしていく",
     "site": "zenn.dev",
