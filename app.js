@@ -8,7 +8,7 @@ const els = {
   empty: document.getElementById('empty'),
 };
 
-const state = { query: '', site: '', savedOnly: false };
+const state = { query: '', site: '' };
 
 let articles = [];
 
@@ -29,7 +29,7 @@ const render = () => {
       link.href = article.url;
       link.target = '_blank';
       link.rel = 'noopener';
-      link.textContent = `${article.saved ? '★ ' : ''}${article.title}`;
+      link.textContent = article.title;
 
       const bar = document.createElement('p');
       bar.className = 'meta';
@@ -63,14 +63,8 @@ const renderChips = () => {
   const sites = [...new Set(articles.map((article) => article.site))].sort();
 
   els.sites.replaceChildren(
-    chip('すべて', !state.site && !state.savedOnly, () => {
+    chip('すべて', !state.site, () => {
       state.site = '';
-      state.savedOnly = false;
-      renderChips();
-      render();
-    }),
-    chip('★ のみ', state.savedOnly, () => {
-      state.savedOnly = !state.savedOnly;
       renderChips();
       render();
     }),

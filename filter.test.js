@@ -9,7 +9,6 @@ const article = (over = {}) => ({
   site: 'example.com',
   date: '2026-09-01',
   tags: [],
-  saved: false,
   note: '',
   ...over,
 });
@@ -132,49 +131,18 @@ describe('filterArticles', () => {
     });
   });
 
-  describe('given a mix of saved and unsaved articles', () => {
-    describe('when savedOnly is enabled', () => {
-      it('then should return only the saved ones', () => {
-        // Given
-        const articles = [article({ url: 'keep', saved: true }), article({ url: 'drop', saved: false })];
-
-        // When
-        const result = filterArticles(articles, { savedOnly: true });
-
-        // Then
-        assert.deepEqual(
-          result.map((a) => a.url),
-          ['keep'],
-        );
-      });
-    });
-
-    describe('when savedOnly is disabled', () => {
-      it('then should return both saved and unsaved articles', () => {
-        // Given
-        const articles = [article({ saved: true }), article({ saved: false })];
-
-        // When
-        const result = filterArticles(articles, { savedOnly: false });
-
-        // Then
-        assert.equal(result.length, 2);
-      });
-    });
-  });
-
   describe('given criteria combined together', () => {
-    describe('when a query and savedOnly are both applied', () => {
+    describe('when a query and a site are both applied', () => {
       it('then should return only articles satisfying both', () => {
         // Given
         const articles = [
-          article({ url: 'hit', title: 'AIレビュー', saved: true }),
-          article({ url: 'unsaved', title: 'AIレビュー', saved: false }),
-          article({ url: 'other', title: 'Kubernetes入門', saved: true }),
+          article({ url: 'hit', title: 'AIレビュー', site: 'zenn.dev' }),
+          article({ url: 'other-site', title: 'AIレビュー', site: 'qiita.com' }),
+          article({ url: 'other-title', title: 'Kubernetes入門', site: 'zenn.dev' }),
         ];
 
         // When
-        const result = filterArticles(articles, { query: 'レビュー', savedOnly: true });
+        const result = filterArticles(articles, { query: 'レビュー', site: 'zenn.dev' });
 
         // Then
         assert.deepEqual(
