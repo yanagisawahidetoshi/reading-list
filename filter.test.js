@@ -170,11 +170,11 @@ describe('filterArticles', () => {
         const articles = [
           article({ url: 'hit', title: 'AIレビュー', saved: true }),
           article({ url: 'unsaved', title: 'AIレビュー', saved: false }),
-          article({ url: 'other', title: 'Rails入門', saved: true }),
+          article({ url: 'other', title: 'Kubernetes入門', saved: true }),
         ];
 
         // When
-        const result = filterArticles(articles, { query: 'AI', savedOnly: true });
+        const result = filterArticles(articles, { query: 'レビュー', savedOnly: true });
 
         // Then
         assert.deepEqual(
