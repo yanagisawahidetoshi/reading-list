@@ -24,7 +24,6 @@
       "code-review",
       "github-actions"
     ],
-    "saved": true,
     "note": "ループエンジニアリングの出口側。サイズラベル→AIレビュー→XSのみauto merge。"
   },
   {
@@ -37,7 +36,6 @@
       "loop-engineering",
       "claude-code"
     ],
-    "saved": true,
     "note": "大量・定型タスクをAIに完遂させる型。ループ単位はタスクではなくキュー全体にする。"
   },
   {
@@ -50,7 +48,6 @@
       "loop-engineering",
       "documentation"
     ],
-    "saved": true,
     "note": "frontmatter を正本の契約にする。status と plan_state を分けて「提案中の計画を実装済み仕様として扱う」事故を防ぐ。ralph-loop（生成）・ペパボ（レビュー）と3点セットで、これは入口側。"
   }
 ]

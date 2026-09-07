@@ -2,11 +2,10 @@
 const haystack = (article) =>
   [article.title, article.url, article.note, ...(article.tags ?? [])].join(' ').toLowerCase();
 
-export const filterArticles = (articles, { query = '', site = '', savedOnly = false } = {}) => {
+export const filterArticles = (articles, { query = '', site = '' } = {}) => {
   const needle = query.trim().toLowerCase();
 
   return articles.filter((article) => {
-    if (savedOnly && !article.saved) return false;
     if (site && article.site !== site) return false;
     if (needle && !haystack(article).includes(needle)) return false;
     return true;
