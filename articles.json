@@ -241,5 +241,18 @@
     "tags": [],
     "saved": false,
     "note": ""
+  },
+  {
+    "url": "https://blog.asial.co.jp/7029/",
+    "title": "AIが迷わない開発環境を、AIとつくる——リポジトリ横断ドキュメント管理の再設計",
+    "site": "blog.asial.co.jp",
+    "date": "2026-09-07",
+    "tags": [
+      "ai",
+      "loop-engineering",
+      "documentation"
+    ],
+    "saved": true,
+    "note": "frontmatter を正本の契約にする。status と plan_state を分けて「提案中の計画を実装済み仕様として扱う」事故を防ぐ。ralph-loop（生成）・ペパボ（レビュー）と3点セットで、これは入口側。"
   }
 ]
