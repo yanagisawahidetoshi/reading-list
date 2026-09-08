@@ -1,5 +1,19 @@
 [
   {
+    "url": "https://zenn.dev/tellernovel_inc/articles/57b223dd4b8f5d",
+    "title": "モバイルアプリ開発でもエージェントループを回したい！React Nativeで計画から検証・PRまで任せる",
+    "site": "zenn.dev",
+    "date": "2026-09-08",
+    "tags": [
+      "ai",
+      "loop-engineering",
+      "react-native",
+      "testing",
+      "storybook"
+    ],
+    "note": "ループエンジニアリングをモバイルでやる話。agent-device で Simulator/Emulator をエージェントに操作させる。芯は「エージェントが検証できる範囲はエージェントの賢さではなく検証可能な作りで決まる」。CLAUDE.md は規約ではなく参照表、機械で止まるものは Linter、止まらない手順は Skill。"
+  },
+  {
     "url": "https://tech-blog.rakus.co.jp/entry/20260903/sdd",
     "title": "スキルを43個作っても越えられない、仕様駆動開発の4つの壁",
     "site": "tech-blog.rakus.co.jp",
