@@ -1,5 +1,19 @@
 [
   {
+    "url": "https://techblog.zozo.com/entry/verify-ai-agent-coding-rules-with-archunit",
+    "title": "AIエージェント向けコーディングルールをArchUnitで機械的に検証する運用",
+    "site": "techblog.zozo.com",
+    "date": "2026-09-10",
+    "tags": [
+      "ai",
+      "loop-engineering",
+      "archunit",
+      "claude-code",
+      "testing"
+    ],
+    "note": "ルールを「読ませる文書」から「実行可能なテスト」へ。読者はAIという前提に立ち返り、相互参照をやめて1ルール単体で完結させる。自然文ルールをArchUnitに変換し、型参照ではなくメソッド呼び出しに絞った独自ArchConditionで生成コードの誤検出を避ける。ルール文書には「どこまで機械検証済みか」を明記し、文書・テスト・実コードの三者突き合わせもAIに任せる。.claude/knowledge/（背景）と.claude/rules/（強制基準）を分離。複数リポへの横展開は需要がなく見送り。./gradlew check に統一＋CIで必須ステータスチェック。"
+  },
+  {
     "url": "https://zenn.dev/tellernovel_inc/articles/57b223dd4b8f5d",
     "title": "モバイルアプリ開発でもエージェントループを回したい！React Nativeで計画から検証・PRまで任せる",
     "site": "zenn.dev",
