@@ -1,5 +1,18 @@
 [
   {
+    "url": "https://zenn.dev/hisaju01/books/meteorfall-development",
+    "title": "メテオフォール開発",
+    "site": "zenn.dev",
+    "date": "2026-09-11",
+    "tags": [
+      "ai",
+      "code-review",
+      "team-development",
+      "book"
+    ],
+    "note": "RUNTEQ ひさじゅの無料本（全13章）。AIに完成品ではなく「直す前提の粗い初期実装（初期落下物）」を作らせ、人間が観測→分類→修正タスクに分解→着地判定で収束させる。開発が終わらない原因は実装力ではなく「観測できる具体物がない」「完了条件がない」こと。依頼は「完成品ではなくレビュー可能な初期実装。仮実装・懸念はREADME/TODOに明記」が芯。観測直後は直さずまず問題を集めて分類。構造が悪ければ捨てて再落下。差分で定義できるタスクになるのでジュニアも入れるが、セキュリティ・権限・課金の判断は人間が持つ。付録にテンプレ集あり。"
+  },
+  {
     "url": "https://techblog.zozo.com/entry/verify-ai-agent-coding-rules-with-archunit",
     "title": "AIエージェント向けコーディングルールをArchUnitで機械的に検証する運用",
     "site": "techblog.zozo.com",
