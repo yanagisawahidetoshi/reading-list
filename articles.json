@@ -1,5 +1,19 @@
 [
   {
+    "url": "https://zenn.dev/xtm_blog/articles/689d035440c0ae",
+    "title": "なぜエージェントハーネスで開発パイプラインを作っているのか",
+    "site": "zenn.dev",
+    "date": "2026-09-10",
+    "tags": [
+      "ai",
+      "loop-engineering",
+      "code-review",
+      "spec-driven-development",
+      "multi-agent"
+    ],
+    "note": "クロステック・マネジメントの内製ハーネス（構築中・未運用）。要求仕様書のMarkdownを入れるとPRが出るまで無人で走る。設計ステージでER図・OpenAPI・Gherkin受入テストを生成し、実装ステージがそれを実装。工程ごとに別エージェントが非同期で担当し、次段へ進めるかはスクリプトが機械的に判定。動機は「AIで実装が速くなるほど人のレビューが詰まる」こと。Stripe/Ramp/Shopifyは規模が理由だが、ここはレビュー工程が先に詰まった。ADR・コード規約・セキュリティ・デザイン規約への適合をゲートと監査のループで自動解決させ、監査に耐えるログ基盤も自前。基盤はdocker-agent（マルチモデル・権限/サンドボックス/ログが標準装備・カスタマイズ性）、権限判定はMicrosoft Agent Governance Toolkitに外出し、実行はCloud Workstations。学びは「AIはテストが最も安く通る実装に逃げる」。要求仕様とデザインガイドが矛盾すると仕様を直さず独自実装で解決するので、上流フォーマットの整備と別エージェントによる遵守チェックが要る。人間の役割は上流に寄る（仕様を書く・規約を用意する・抽象度を上げる）が、介入ポイントとPRの責任の所在は未定義。"
+  },
+  {
     "url": "https://zenn.dev/hisaju01/books/meteorfall-development",
     "title": "メテオフォール開発",
     "site": "zenn.dev",
