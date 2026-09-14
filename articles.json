@@ -1,5 +1,18 @@
 [
   {
+    "url": "https://ashunar0.dev/posts/does-your-project-need-nextjs/",
+    "title": "そのプロジェクト、本当にNext.js必要？",
+    "site": "ashunar0.dev",
+    "date": "2026-09-14",
+    "tags": [
+      "ai",
+      "nextjs",
+      "frontend",
+      "architecture"
+    ],
+    "note": "AIがNext.jsを勧めるのは最適だからではなく学習データで一番よく見た形だから（書かせると結局全部use client）。Next.jsの強み（App Router/RSC/キャッシュ戦略）が効くのは、SEOが重要な公開ページが大量にある・初期表示速度が売上に直結する（EC商品ページ）・サーバー専用データにページ単位で複雑に依存する、の場合だけ。社内ツール・管理画面・ログイン必須SaaS・ユーザーのいない個人開発初期はその課題自体を持たず、コストだけ払う。コストは3つ：キャッシュ挙動の把握（fetchキャッシュ/Route Segment Config/revalidatePath、版ごとに挙動が変わる）、use client境界の管理（誤るとバンドル肥大やサーバー処理の漏れ出し）、Vercelロックイン（OpenNextは遅い・不安定）。代替：SPA（Vite+React/Vue）+Hono等の薄いAPI（筆者はTanStack Router+Hono）、静的中心ならAstro、SSRが要るならTanStack StartかReact Router v7（Request/Responseベースで十分）。AIもこれらは普通に書ける。技術選定は「AIがそう言うから」ではなく、抱えている課題から逆算する。"
+  },
+  {
     "url": "https://zenn.dev/xtm_blog/articles/689d035440c0ae",
     "title": "なぜエージェントハーネスで開発パイプラインを作っているのか",
     "site": "zenn.dev",
