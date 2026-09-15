@@ -131,5 +131,17 @@
       "documentation"
     ],
     "note": "frontmatter を正本の契約にする。status と plan_state を分けて「提案中の計画を実装済み仕様として扱う」事故を防ぐ。ralph-loop（生成）・ペパボ（レビュー）と3点セットで、これは入口側。"
+  },
+  {
+    "url": "https://speakerdeck.com/pirosikick/anshin-shi-te-henkou-dekiru-web-furonto-endo-no-tsukurikata",
+    "title": "安心して変更できるWebフロントエンドの作り方",
+    "site": "speakerdeck.com",
+    "date": "2026-09-15",
+    "tags": [
+      "testing",
+      "frontend",
+      "ai"
+    ],
+    "note": "振る舞いはIntegration Testで守るのが最もコスパが良い。ただし書けないのは怠惰ではなくコードからのシグナルで、単純性・ドメイン理解・テスト基盤を先に直す。AIはテストを増やすがモック過多・効果の薄いUnit Test寄りになる（LayerX 穴井さん、フロカン福岡2026）。"
   }
 ]
