@@ -182,5 +182,17 @@
       "code-review"
     ],
     "note": "米Microsoft（Azure Functions）の牛尾剛氏インタビュー（エンジニアtype）。AIは使い倒した結果「普通の文房具」になり、使いこなし自体は差にならない。AIは実力を10倍にするアーマーで、差がつくのは本体＝事業が今いちばん求める価値を見極めて届ける力。エージェント並列で大量にPRを作っても人間のレビューと意思決定がボトルネックになる。ブラインドアプルーブせず「なぜこの設計・この命名か」をAIに問いただし、理解を飛ばすのではなく深めるために使う（最初は遅いが二回目から速い）。レイオフは個人で制御できないので、されても生き延びられる本体を作る。未来は予測せず来た球を打つ。"
+  },
+  {
+    "url": "https://gigazine.net/news/20260916-gemini-3-8-live/",
+    "title": "Googleが音声会話AI「Gemini 3.8 Live」と「Gemini 3.8 Live Extended Thinking」をリリース、リアルタイムで会話しながらコーディング可能",
+    "site": "gigazine.net",
+    "date": "2026-09-16",
+    "tags": [
+      "ai",
+      "gemini",
+      "voice"
+    ],
+    "note": "Googleの音声会話AI新モデル2種。推論強化・ほぼリアルタイムの映像理解・97言語の自動判別・会話を止めないバックグラウンドのツール呼び出し。Extended Thinking版を相手に会話しながらコーディングするデモあり。Artificial AnalysisのテストでGPT-Live-1-AstraやGrok Voice Think Fast 2.0を上回り、Speech Agent ArenaではGemini 3.8 Liveが全体2位。"
   }
 ]
