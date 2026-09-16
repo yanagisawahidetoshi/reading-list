@@ -1,5 +1,19 @@
 [
   {
+    "url": "https://www.docswell.com/s/3402128/KVJYJ3-2026-09-15-202358",
+    "title": "AIレビューは３層でまわす",
+    "site": "docswell.com",
+    "date": "2026-09-15",
+    "tags": [
+      "ai",
+      "code-review",
+      "claude-code",
+      "codex",
+      "security"
+    ],
+    "note": "篠田敬廣（しの）氏の登壇スライド21枚。AIレビューを「ローカル／PR時／デイリー」の3層に分け、すべて既存サブスクの範囲（追加課金なし）で回す構成。層は「いつ・誰が動かすか」で分ける：ローカル＝自分がコマンド1つ・今回の差分・修正ループが短い／PR時＝GitHub Appが自動・自分が忘れても走る／デイリー＝スケジュール実行・リポジトリ全体と依存関係。ローカルは Claude Code の /code-review（バグ・デグレ、マージを止めるゲート）、/security-review（攻撃シナリオ付き監査、確信度で切るので誤検知が少ない）、Codex の /review（挙動変化・テスト不足、参照先のクラスまで読みに行く）の3つ。自作の /ai-review で Claude Code と Codex に互いの結果を見せずに並列実行→突合し、一致は採用・片方だけの指摘はコードで確認。認証/課金/migration などのパス、exec・eval・SQL文字列結合などの追加行、20ファイル超か1000行超、片方がセキュリティ指摘、判定が割れた、の5条件のどれかに当たれば /security-review へ自動昇格（判定はgrep主体でモデル不使用、秘密情報が差分にあればCodexへ送らない）。さらに /ai-review の結論（pass/fix/block）とHEADのSHAを記録し、push時にフックで突き合わせて未レビュー・block・昇格未実施を拒否する。ツール選定は雰囲気ではなくOWASP Benchmark 110件（11分野×危険5・安全5のJavaコード）を中立プロンプト・隔離環境で走らせ、スコア＝検出率−誤検知率で測った。最新世代は5方式が満点1.000、Codex GPT-5.6-Sol が0.982、Cursor 0.927。ただし一番高い1つに寄せるのではなく、見逃しが少ない/code-reviewを入口、誤検知ゼロの/security-reviewを裏取り、別ベンダーのCodexを意見の割れを見つける役、と性格で分担する。PR時は Amazon Q Developer / Devin Review / GitHub Copilot / Codex / Cursor Bugbot の5レビュアー＋依存監査の Socket Security をGitHub Appとして入れるだけ。デイリーは Dependabot と Secret scanning を、自作のGitHub Actions（sweeper、毎朝6時に全リポ巡回）でブランチ保護ごと強制する。組み合わせる理由はスイスチーズモデル＝どの層にも穴があるので穴の位置が違う層を重ねる。ローカルを厚くするのは修正ループが短く従量課金を消費しないから、それでもPR時を外さないのは「自分に依存しない」から（急いでいる日もエージェントが勝手に出したPRも同じように読まれる／自己採点は人もAIも甘い）。DORA 2026 が「レビュー無しマージの増加」を品質リスクと警告している点を根拠に挙げる。サブスク内で使えるかは機能ごとに違い、/code-review ultra は無料3回まで（以後1回$5〜25）、Code Review GitHub App は Team/Enterprise のみ、Bugbot は Cursor Pro 以上に包含。根拠記事は zenn.dev/yukkie1114/articles/3d927e8c28e085（ベンチの測り方と結果）と f13672584add05（最新スコアとサブスク早見表）。"
+  },
+  {
     "url": "https://tech.findy.co.jp/entry/2026/09/14/070000",
     "title": "越境を可能にする、人とAIのためのデザインシステム",
     "site": "tech.findy.co.jp",
