@@ -194,5 +194,19 @@
       "voice"
     ],
     "note": "Googleの音声会話AI新モデル2種。推論強化・ほぼリアルタイムの映像理解・97言語の自動判別・会話を止めないバックグラウンドのツール呼び出し。Extended Thinking版を相手に会話しながらコーディングするデモあり。Artificial AnalysisのテストでGPT-Live-1-AstraやGrok Voice Think Fast 2.0を上回り、Speech Agent ArenaではGemini 3.8 Liveが全体2位。"
+  },
+  {
+    "url": "https://speakerdeck.com/ashunar0/kojin-kaihatsu-ha-cloudflare-ni-subete-kakero",
+    "title": "個人開発はCloudflareにすべて賭けろ",
+    "site": "speakerdeck.com",
+    "date": "2026-09-26",
+    "tags": [
+      "cloudflare",
+      "workers",
+      "personal-dev",
+      "serverless",
+      "ai-agent"
+    ],
+    "note": "Findyテック文化祭2026でのasahi（@ashunar0）氏の登壇スライド35枚。個人開発の定番「Next.js + Supabase + Vercel」に対し、Cloudflareに寄せる理由を6点で挙げる。①無料枠：Workers 10万req/日、静的ファイルは無料・無制限でリクエスト数に含まれない、R2は10GB/月でEgress完全無料（Vercel CDNは5000枚/月、Supabaseは5GBまで）、D1はread/write 10万行・保存5GB、KV/Queues/Cronにも無料枠。Freeプランでも商用利用OK（Vercel Hobbyは商用NGで$20/月が必要）。②速度：Workersはv8 isolateで起動約5ms、コールドスタートは全リクエストの0.01%程度。D1はスリープしない（Supabaseは1週間アクセスがないと止まる）。③バインディング：wrangler.jsoncに書くだけでc.env.DB / c.env.BUCKETとして繋がり、接続文字列もアクセスキーも要らない。.envのGitHub誤commit事故が起きず、チーム間の共有も不要。④Durable Objects：名前ごとにインスタンスとSQLiteが自動生成され、同時リクエストは自動で直列化（ロック・トランザクション不要）、未使用時はWebSocketを繋いだままスリープして課金されず、インスタンスごとのタイマーで自分で起きられる。「マルチプレイヤーを民主化する技術」。⑤その他：Zero Trust Access（アプリ側コード0行で「このメアドだけ通す」認証）、Tunnel（ポート開放も固定IPもなしで自宅マシンを公開、ngrokと違いURLが変わらない）、AI Gateway（推論の前段にキャッシュとレート制限、請求集約と上限設定）、Sandbox（隔離コンテナ）。⑥Agents Week 2026（2026年8月）以降、Agent Memory・Sandboxes・Agents Wallets・cloudflare.pay・Browser Run等、人間ではなくAIエージェントが使うための環境づくりが進む。発表者の実例は内定者交流アプリ（React/Tanstack Router/Hono/Supabase/R2）、ブログ（Astro+Workers）、プログラミングスクール教材サイト（Hono/Astro/D1/Durable Objects/KV/Containers）。"
   }
 ]
