@@ -208,5 +208,19 @@
       "ai-agent"
     ],
     "note": "Findyテック文化祭2026でのasahi（@ashunar0）氏の登壇スライド35枚。個人開発の定番「Next.js + Supabase + Vercel」に対し、Cloudflareに寄せる理由を6点で挙げる。①無料枠：Workers 10万req/日、静的ファイルは無料・無制限でリクエスト数に含まれない、R2は10GB/月でEgress完全無料（Vercel CDNは5000枚/月、Supabaseは5GBまで）、D1はread/write 10万行・保存5GB、KV/Queues/Cronにも無料枠。Freeプランでも商用利用OK（Vercel Hobbyは商用NGで$20/月が必要）。②速度：Workersはv8 isolateで起動約5ms、コールドスタートは全リクエストの0.01%程度。D1はスリープしない（Supabaseは1週間アクセスがないと止まる）。③バインディング：wrangler.jsoncに書くだけでc.env.DB / c.env.BUCKETとして繋がり、接続文字列もアクセスキーも要らない。.envのGitHub誤commit事故が起きず、チーム間の共有も不要。④Durable Objects：名前ごとにインスタンスとSQLiteが自動生成され、同時リクエストは自動で直列化（ロック・トランザクション不要）、未使用時はWebSocketを繋いだままスリープして課金されず、インスタンスごとのタイマーで自分で起きられる。「マルチプレイヤーを民主化する技術」。⑤その他：Zero Trust Access（アプリ側コード0行で「このメアドだけ通す」認証）、Tunnel（ポート開放も固定IPもなしで自宅マシンを公開、ngrokと違いURLが変わらない）、AI Gateway（推論の前段にキャッシュとレート制限、請求集約と上限設定）、Sandbox（隔離コンテナ）。⑥Agents Week 2026（2026年8月）以降、Agent Memory・Sandboxes・Agents Wallets・cloudflare.pay・Browser Run等、人間ではなくAIエージェントが使うための環境づくりが進む。発表者の実例は内定者交流アプリ（React/Tanstack Router/Hono/Supabase/R2）、ブログ（Astro+Workers）、プログラミングスクール教材サイト（Hono/Astro/D1/Durable Objects/KV/Containers）。"
+  },
+  {
+    "url": "https://zenn.dev/softbank/articles/6f98cf7c4ebfd3",
+    "title": "AI 駆動開発で「設計」はどこに書くのか ― 振る舞いをテストで検証できる「仕様」にしてみる",
+    "site": "zenn.dev",
+    "date": "2026-10-04",
+    "tags": [
+      "ai",
+      "spec-driven-development",
+      "architecture",
+      "testing",
+      "python"
+    ],
+    "note": "ソフトバンクのエンジニアによる記事。AI駆動開発では「コードを書く」作業の負担が減る一方、「何を実装させるか」を決める設計の比重が増えている、という実感から出発し、要求を仕様に落とし込み振る舞いをテストで検証できる形にする試みを示す。前半は設計を「要求を理解し構造に変換すること」と捉え、AIが埋めてしまう仕様の空白（認可・並び順・ページネーション方式・性能要件など）を先に決めておく必要性、ADR（Architecture Decision Record）のような設計根拠（なぜその構造を選んだか）の記録、GitHub Spec KitやKiroのようなSpec-Driven Developmentの流れを紹介。中盤はOpenAPI・DDL・型定義のように機械的に照合できる成果物と、クラス図・シーケンス図・状態遷移図のように照合手段を持たない成果物を対比し、注文処理の「決済前に注文を作る」のような内部の処理順序はコードにしか書かれておらず、AIが大量にコードを生成するとレビュー負荷が上がる点を指摘。後半は実装サンプルで、MarkdownにMermaidのシーケンス図で呼び出し順を仕様として書き、テスト実行中の関数呼び出しをPythonの sys.monitoring（PEP 669、Python 3.12以降）で記録し、図の呼び出し順が記録に部分列として現れるかを照合する仕組みを作る。処理順序を入れ替えると結果のアサーションは通るが仕様照合は失敗することを実演し、結果のテストを置き換えるのではなく補完する位置付けだと説明する。結論は「仕様はAIと一緒に書き、仕様とコードが一致しているかは決定的なプログラムで判定し、人のレビューはコードそのものより『この仕様でよいか』に重心を移す」という役割分担。Design by Contract・TLA+・モデル駆動開発など振る舞い検証のAI以前からのアプローチも比較している。"
   }
 ]
